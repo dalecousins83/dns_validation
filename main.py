@@ -41,15 +41,6 @@ with open('sbr.gov.au.zone', 'r') as file:
     file.close()
 
 
-with open("sbr.gov.au_pre.txt", mode="wt") as f:
-
-    for cname in cnames:
-        print(nslookup(cname))
-        f.write(str(nslookup(cname)))
-        f.write('*****************')
-
-f.close()
-
 dir_objects = ls()
 print(dir_objects)
 
@@ -80,3 +71,13 @@ if file_to_check == 0:
 
 print("Checking " + str(dir_objects[int(file_to_check) -1]))
 touch(str(dir_objects[int(file_to_check)-1].replace(".zone","") + "_" + run_type + "-check.txt"))
+
+
+with open("str(dir_objects[int(file_to_check)-1].replace(".zone","") + "_" + run_type + "-check.txt"", mode="wt") as f:
+
+    for cname in cnames:
+        print(nslookup(cname))
+        f.write(str(nslookup(cname)))
+        f.write('*****************')
+
+f.close()
