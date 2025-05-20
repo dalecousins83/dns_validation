@@ -22,11 +22,9 @@ def nslookup(domain):
     try:
         str(output).index('Non-authoritative answer:')
     except:
-        #print(str(output.split()[0]) + " record does not exist")
-        #return str(output.split()[0]) + " record does not exist"
-        print("record does not exist")
+        print("record does not exist:")
         print(output[0])
-        print("***")
+        print("---------------------")
         return str(output[0] + "not found")
     
     else:
