@@ -73,7 +73,7 @@ print("Checking " + str(dir_objects[int(file_to_check) -1]))
 touch(str(dir_objects[int(file_to_check)-1].replace(".zone","") + "_" + run_type + "-check.txt"))
 
 
-with open("str(dir_objects[int(file_to_check)-1].replace(".zone","") + "_" + run_type + "-check.txt"", mode="wt") as f:
+with open('str(dir_objects[int(file_to_check)-1].replace(".zone","") + "_" + run_type + "-check.txt"', mode="wt") as f:
 
     for cname in cnames:
         print(nslookup(cname))
