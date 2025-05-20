@@ -25,6 +25,10 @@ def nslookup(domain):
         #print(str(output.split()[0]) + " record does not exist")
         #return str(output.split()[0]) + " record does not exist"
         print("record does not exist")
+        print(output[0])
+        print("***")
+        return str(output[0] + "not found")
+    
     else:
         return str(output).split('Non-authoritative answer:')[1]
 
