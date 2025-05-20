@@ -30,17 +30,6 @@ def touch(filename):
     process = subprocess.Popen(["touch", filename], stdout=subprocess.PIPE)
     output = process.communicate()
 
-cnames = []
-
-with open('sbr.gov.au.zone', 'r') as file:
-
-    for line in file:
-        if line.__contains__("CNAME"):
-            #print(line.split()[0])
-            cnames.append(line.split()[0])
-    file.close()
-
-
 dir_objects = ls()
 print(dir_objects)
 
@@ -69,9 +58,23 @@ if file_to_check == 0:
         print("invalid menu selection")
         file_to_check = input("Which file do you wish to check?")
 
+
+
 print("Checking " + str(dir_objects[int(file_to_check) -1]))
 #touch(str(dir_objects[int(file_to_check)-1].replace(".zone","") + "_" + run_type + "-check.txt"))
+sourcefile_name = str(dir_objects[int(file_to_check)-1])
 checkfile_name = str(dir_objects[int(file_to_check)-1].replace(".zone","") + "_" + run_type + "-check.txt")
+
+cnames = []
+
+#with open('sbr.gov.au.zone', 'r') as file:
+with open(sourcefile_name, 'r') as file:
+
+    for line in file:
+        if line.__contains__("CNAME"):
+            #print(line.split()[0])
+            cnames.append(line.split()[0])
+    file.close()
 
 touch(checkfile_name)
 
