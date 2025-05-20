@@ -1,3 +1,5 @@
+### NOTE - put all zone files (.zone extension) for checking into the same directory as this script - we'll detect them and through the menu select the appropriate file for the checks
+
 import subprocess
 
 def ls():
@@ -39,7 +41,7 @@ print("~~~~~~~~~~~~~~~~~~~~~~")
 
 run_type = ""
 while run_type != "pre" and run_type != "post":
-    run_type = input("Are you running a pre or post check? ")
+    run_type = input("Are you running a pre-migration or post-migration check? (enter 'pre' or 'post')")
 
 print("\n")
 menu_counter = 1
