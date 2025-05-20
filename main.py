@@ -67,7 +67,6 @@ checkfile_name = str(dir_objects[int(file_to_check)-1].replace(".zone","") + "_"
 
 cnames = []
 
-#with open('sbr.gov.au.zone', 'r') as file:
 with open(sourcefile_name, 'r') as file:
 
     for line in file:
