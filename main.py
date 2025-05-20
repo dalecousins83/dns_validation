@@ -54,17 +54,17 @@ print("The following zone files are available for your " + run_type + (" check:"
 
 for obj in dir_objects:
     print(str(menu_counter) + " - " + obj)
+    menu_counter+=1
 
 file_to_check = 0
 
+print('\n')
 if file_to_check == 0:
-    file_to_check = input("Which file do you wish to check?")
+    file_to_check = input("Enter the number of the file you want to check:")
 
     while int(file_to_check) == 0 or int(file_to_check) > len(dir_objects):
         print("invalid menu selection")
         file_to_check = input("Which file do you wish to check?")
-
-
 
 print("Checking " + str(dir_objects[int(file_to_check) -1]))
 
