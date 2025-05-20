@@ -8,10 +8,11 @@ def ls():
 
     dir_objs = []
 
+    print(output[0])
     print(str(output).split("\\n"))
     for dir_obj in str(output).split("\\n"):
         if dir_obj.__contains__(".zone"):
-            dir_objs.append(dir_obj)
+            dir_objs.append(dir_obj.replace("(b'",""))
 
     return dir_objs
 
@@ -23,10 +24,11 @@ def nslookup(domain):
         str(output).index('Non-authoritative answer:')
     except:
         print("record does not exist:")
-        print(output[0])
-        print("---------------------")
-        return str(output[0] + "not found")
-    
+        #print(output[0])
+        #print("---------------------")
+        #return str(output[0] + "not found")
+        return("not found")
+
     else:
         return str(output).split('Non-authoritative answer:')[1]
 
@@ -58,7 +60,7 @@ file_to_check = 0
 
 print('\n')
 if file_to_check == 0:
-    file_to_check = input("Enter the number of the file you want to check:")
+    file_to_check = input("Enter the number of the file you want to check: ")
 
     while int(file_to_check) == 0 or int(file_to_check) > len(dir_objects):
         print("invalid menu selection")
