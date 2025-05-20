@@ -88,7 +88,6 @@ with open(checkfile_name, mode="wt") as f:
 
     for cname in cnames:
         print(nslookup(cname))
-        f.write(str(nslookup(cname)))
-        f.write('*****************')
+        f.write(str(nslookup(cname)) + '\n')
 
 f.close()
