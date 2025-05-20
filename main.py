@@ -70,10 +70,13 @@ if file_to_check == 0:
         file_to_check = input("Which file do you wish to check?")
 
 print("Checking " + str(dir_objects[int(file_to_check) -1]))
-touch(str(dir_objects[int(file_to_check)-1].replace(".zone","") + "_" + run_type + "-check.txt"))
+#touch(str(dir_objects[int(file_to_check)-1].replace(".zone","") + "_" + run_type + "-check.txt"))
+checkfile_name = str(dir_objects[int(file_to_check)-1].replace(".zone","") + "_" + run_type + "-check.txt")
 
+touch(checkfile_name)
 
-with open(str(dir_objects[int(file_to_check)-1].replace(".zone","") + "_" + run_type + "-check.txt", mode="wt") as f:
+#with open(str(dir_objects[int(file_to_check)-1].replace(".zone","") + "_" + run_type + "-check.txt", mode="wt") as f:
+with open(checkfile_name, mode="wt") as f:
 
     for cname in cnames:
         print(nslookup(cname))
