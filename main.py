@@ -42,10 +42,6 @@ with open('sbr.gov.au.zone', 'r') as file:
 
 
 with open("sbr.gov.au_pre.txt", mode="wt") as f:
-    #f.write("This is text!\n")
-    #f.write("And some more text\n")
-
-#cnames = ["www.ato.gov.au","www.sbr.ato.gov.au"]
 
     for cname in cnames:
         print(nslookup(cname))
@@ -76,11 +72,11 @@ for obj in dir_objects:
 file_to_check = 0
 
 if file_to_check == 0:
-    file_to_check = input("1Which file do you wish to check?")
+    file_to_check = input("Which file do you wish to check?")
 
     while int(file_to_check) == 0 or int(file_to_check) > len(dir_objects):
         print("invalid menu selection")
-        file_to_check = input("2Which file do you wish to check?")
+        file_to_check = input("Which file do you wish to check?")
 
 print("Checking " + str(dir_objects[int(file_to_check) -1]))
 touch(str(dir_objects[int(file_to_check)-1].replace(".zone","") + "_" + run_type + "-check.txt"))
