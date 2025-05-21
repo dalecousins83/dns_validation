@@ -88,9 +88,13 @@ with open(checkfile_name, mode="wt") as f:
 
     for cname in cnames:
         cn_record = (nslookup(cname))
+        #print("cn_record is " + cn_record)
+        #print("removed \\t" + cn_record.replace('\\t','\\\t'))
         cn_record = cn_record.replace('\\t', '\\\t')
         cn_record = cn_record.replace('\\n', '\\\n')
         cn_record = cn_record.replace('\\', '')
         cn_record = cn_record.replace("', None)", '')
+        #f.write(str(nslookup(cname)) + '\n')
+        f.write(cn_record + '\n')
 
 f.close()
