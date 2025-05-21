@@ -8,8 +8,8 @@ def ls():
 
     dir_objs = []
 
-    print(output[0])
-    print(str(output).split("\\n"))
+    #print(output[0])
+    #print(str(output).split("\\n"))
     for dir_obj in str(output).split("\\n"):
         if dir_obj.__contains__(".zone"):
             dir_objs.append(dir_obj.replace("(b'",""))
