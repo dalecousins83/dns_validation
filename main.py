@@ -37,7 +37,7 @@ def touch(filename):
     output = process.communicate()
 
 dir_objects = ls()
-print(dir_objects)
+#print(dir_objects)
 
 print("~~~~~~~~~~~~~~~~~~~~~~")
 print("~~ DNS CHECKER MENU ~~")
